@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% block content%} {% for pet in pets %}
+<h2><a href="/{{pet.id}}">{{pet.name}}</a></h2>
+{% if pet.photo_url %}
+<img src="{{pet.photo_url}}" alt="" />
+{% else %}
+<p>no photo present</p>
+{% endif %} {% if pet.available %} <b>AVAILABLE!</b>
+{% endif %} {% endfor %}
+
+<a href="/add">Add new pet</a>{% endblock %}
